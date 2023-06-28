@@ -25,5 +25,16 @@ public class Main {
             imagens.add(urlImagem);
            // System.out.println(urlImagem);
         }
+
+        // Busca no filmesJson pelo ano
+        Pattern patternAno = Pattern.compile("year");
+        Matcher matcherAno = patternAno.matcher(filmesJson);
+        List<String> filmeAnos = new ArrayList<>();
+        while (matcherAno.find()){
+            String titulo = filmesJson.substring(matcherAno.start() +3, matcherAno.end() +7);
+            filmeAnos.add(titulo);
+            System.out.println(titulo);
+        }
+
     }
 }
