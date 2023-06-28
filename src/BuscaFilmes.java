@@ -5,10 +5,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class BuscaFilmes {
-
+    String API_KEY = "k_6ykgi0p5";
+    URI endereco_imdb = URI.create("https://imdb-api.com/en/API/Top250Movies/"+API_KEY);
     HttpClient client = HttpClient.newHttpClient();
     HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://imdb-api.com/en/API/Top250Movies/k_6ykgi0p5"))
+            .uri(endereco_imdb)
             .GET()
             .build();
     HttpResponse<String> response;
